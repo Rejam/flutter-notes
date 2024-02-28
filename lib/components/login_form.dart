@@ -2,6 +2,8 @@ import 'dart:developer' as devtools show log;
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_notes/constants/routes.dart';
+import 'package:my_notes/main.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -56,7 +58,7 @@ class _LoginFormState extends State<LoginForm> {
                   .signInWithEmailAndPassword(email: email, password: password);
               if (context.mounted) {
                 Navigator.of(context)
-                    .pushNamedAndRemoveUntil('/notes', (route) => false);
+                    .pushNamedAndRemoveUntil(Routes.notes, (route) => false);
               }
             } on FirebaseAuthException catch (e) {
               final message = handleFirebaseAuthError(e);

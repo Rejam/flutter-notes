@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_notes/components/login_form.dart';
+import 'package:my_notes/constants/routes.dart';
+import 'package:my_notes/main.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -27,7 +29,7 @@ class RegisterLink extends StatelessWidget {
     return TextButton(
         onPressed: () {
           Navigator.of(context)
-              .pushNamedAndRemoveUntil('/register', (route) => false);
+              .pushNamedAndRemoveUntil(Routes.register, (route) => false);
         },
         child: const Text("Don't have an account? Register"));
   }
